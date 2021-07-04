@@ -1,5 +1,5 @@
-function Timer() {
-    var eT = new Date("16 May 2021 14:30:00 GMT+05:30");
+/*function Timer() {
+    var eT = new Date("16 July 2021 10:00:00 GMT+05:30");
     eT = (Date.parse(eT) / 1000);
 
     var nw = new Date();
@@ -23,3 +23,65 @@ function Timer() {
 
 }
 
+
+(function () {
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+   
+    let birthday = "Sep 30, 2021 00:00:00",
+      countDown = new Date(birthday).getTime(),
+      x = setInterval(function () {
+        let now = new Date().getTime(),
+          distance = countDown - now;
+   
+        (document.getElementById("days").innerText = Math.floor(distance / day)),
+          (document.getElementById("hours").innerText = Math.floor(
+            (distance % day) / hour
+          )),
+          (document.getElementById("minutes").innerText = Math.floor(
+            (distance % hour) / minute
+          )),
+          (document.getElementById("seconds").innerText = Math.floor(
+            (distance % minute) / second
+          ));
+   
+        //do something later when date is reached
+        if (distance < 0) {
+          let headline = document.getElementById("headline"),
+            countdown = document.getElementById("countdown"),
+            content = document.getElementById("content");
+   
+          headline.innerText = "It's my birthday!";
+          countdown.style.display = "none";
+          content.style.display = "block";
+   
+          clearInterval(x);
+        }
+        //seconds
+      }, 0);
+  })();*/
+
+  var deadline = new Date("Jul 16, 2021 10:00:00").getTime(); 
+  
+  var x = setInterval(function() { 
+    
+  var now = new Date().getTime(); 
+  var t = deadline - now; 
+  var days = Math.floor(t / (1000*60*60*24)); 
+  var hours = Math.floor((t%(1000*60*60*24))/(1000 * 60 * 60)); 
+  var minutes = Math.floor((t%(1000*60*60)) / (1000 * 60)); 
+  var seconds = Math.floor((t%(1000*60)) / 1000); 
+  document.getElementById("day").innerHTML =days ; 
+  document.getElementById("hour").innerHTML =hours; 
+  document.getElementById("minute").innerHTML = minutes;  
+  document.getElementById("second").innerHTML =seconds;  
+  if (t < 0) { 
+          clearInterval(x); 
+          document.getElementById("demo").innerHTML = "TIME UP"; 
+          document.getElementById("day").innerHTML ='0'; 
+          document.getElementById("hour").innerHTML ='0'; 
+          document.getElementById("minute").innerHTML ='0' ;  
+          document.getElementById("second").innerHTML = '0'; } 
+  }, 1000); 
