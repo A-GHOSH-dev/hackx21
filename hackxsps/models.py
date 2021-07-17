@@ -12,9 +12,7 @@ class Registration(models.Model):
     pin = models.CharField(max_length=30)
     phone = models.CharField(max_length=10)
     whatsapp = models.CharField(max_length=10)
-    linkedin = models.CharField(max_length=300)
-    insta = models.CharField(max_length=300)
-    git = models.CharField(max_length=300)
+    
     college = models.CharField(max_length=100)
     year = models.CharField(max_length=1)
     stream = models.CharField(max_length=60)
@@ -27,6 +25,8 @@ class Registration(models.Model):
     teammememail2 = models.EmailField(max_length=100)
     teammemname3 = models.CharField(max_length=100)
     teammememail3 = models.EmailField(max_length=100)
+    teammemname4 = models.CharField(max_length=100)
+    teammememail4 = models.EmailField(max_length=100)
 
 
 
